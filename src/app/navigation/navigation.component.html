@@ -1,0 +1,213 @@
+<!-- <mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>T M S APP</mat-toolbar>
+    <ul>
+      <li><a href="" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+          aria-controls="collapseExample"><i class="fa-solid fa-house-user"></i><span class="ml-2">Dasahboard </span>
+          <span class="d1">1</span></a></li>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+          
+        </div>
+      </div>
+      <li><a href="" class="active"> Workspace </a></li>
+      <li> <a href="" class="active">Time Sheets </a></li>
+      <li> <a href="" data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false"
+          aria-controls="collapseExample"> <i class="fa-solid fa-gear"></i><span></span> Controle Panel </a></li>
+      <div class="collapse" id="collapseExample1">
+        <div class="card card-body">
+          <ul>
+            <li> <a routerLink=""> <i class="fa-solid fa-bars"></i><span class="pl-2">Account Setting</span></a></li>
+            <li> <a routerLink=""> <i class="fa-solid fa-bars"></i><span class="pl-2">Users</span></a></li>
+            <li> <a routerLink=""><i class="fa-solid fa-bars"></i><span class="pl-2">Roles</span></a></li>
+            <li> <a routerLink=""><i class="fa-solid fa-bars"></i><span class="pl-2">Permissions</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </ul>
+  </mat-sidenav>
+  <mat-sidenav-content>
+     
+
+
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+<div class="sidebar">
+<h2 class="tms-brand  ">T M S APP</h2>
+  <a class="active" href="#">
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item  ac-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button
+            class="accordion-button ac-btn"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+          <i class="fa-solid fa-house"></i> <span class="pl-2"> Dashboard</span>
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-mdb-parent="#accordionExample">
+          <div class="accordion-body">
+         
+          </div>
+        </div>
+      </div>
+      <div class="w-space"> <a href="#news">Work Space</a>
+      <a routerLink="/timesheet1" class="active"> <i class="fa-solid fa-clock"></i> <span class="pl-1">Time Sheets</span></a></div>
+      <div class="accordion-item ac-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+          <i class="fa-solid fa-gear"></i><span class="pl-1">Controle Pannel</span>  
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-mdb-parent="#accordionExample">
+          <div class="accordion-body ac-body">
+            <div class="list-group list-group-light" id="list-tab" role="tablist">
+              <a class="list-group-item list-group-item-action  px-3 border-0" id="list-home-list"
+                data-mdb-toggle="list" href="" role="tab" aria-controls="list-home"><i class="fa-solid fa-equals"></i><span class="pl-1">Account Setting</span> </a>
+              <a class="list-group-item list-group-item-action px-3 border-0" id="list-profile-list"
+                data-mdb-toggle="list" href="" role="tab" aria-controls="list-profile"> <i class="fa-solid fa-equals"></i><span class="pl-1">User</span></a>
+              <a class="list-group-item list-group-item-action px-3 border-0" id="list-messages-list"
+                data-mdb-toggle="list" routerLink="role" role="tab" aria-controls="list-messages"> <i class="fa-solid fa-equals"></i><span class="pl-1">Role</span></a>
+              <a class="list-group-item list-group-item-action px-3 border-0" id="list-settings-list"
+                data-mdb-toggle="list" href="" role="tab" aria-controls="list-settings"><i class="fa-solid fa-equals"></i> <span class="pl-1">Permissions</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+
+</div>
+
+<div class="content">
+     <!-- Navbar -->
+     <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+
+          <ul class="navbar-nav flex-row d-none d-md-flex">
+              <li class="nav-item me-3 me-lg-1 active">
+                  <a class="nav-link" href="#">
+                      <span><i class="fas fa-home fa-lg"></i></span>
+                      <span class="badge rounded-pill badge-notification bg-danger">1</span>
+                  </a>
+              </li>
+
+              <li class="nav-item me-3 me-lg-1">
+                  <a class="nav-link" href="#">
+                      <span><i class="fas fa-flag fa-lg"></i></span>
+                  </a>
+              </li>
+
+              <li class="nav-item me-3 me-lg-1">
+                  <a class="nav-link" href="#">
+                      <span><i class="fas fa-video fa-lg"></i></span>
+                  </a>
+              </li>
+
+              <li class="nav-item me-3 me-lg-1">
+                  <a class="nav-link" href="#">
+                      <span><i class="fas fa-shopping-bag fa-lg"></i></span>
+                  </a>
+              </li>
+
+              <li class="nav-item me-3 me-lg-1">
+                  <a class="nav-link" href="#">
+                      <span><i class="fas fa-users fa-lg"></i></span>
+                      <span class="badge rounded-pill badge-notification bg-danger">2</span>
+                  </a>
+              </li>
+          </ul>
+          <!-- Center elements -->
+
+          <!-- Right elements -->
+          <ul class="navbar-nav flex-row">
+              <li class="nav-item me-3 me-lg-1">
+                  <a class="nav-link d-sm-flex align-items-sm-center" routerLink="/login">
+                      <img src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" class="rounded-circle"
+                          height="22" alt="Black and White Portrait of a Man" loading="lazy" />
+                      <strong class="d-none d-sm-block ms-1">Login</strong>
+                  </a>
+              </li>
+              <li class="nav-item me-3 me-lg-1">
+                  <a class="nav-link" href="#">
+                      <span><i class="fas fa-plus-circle fa-lg"></i></span>
+                  </a>
+              </li>
+              <li class="nav-item dropdown me-3 me-lg-1">
+                  <a class="nav-link dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
+                      role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-comments fa-lg"></i>
+
+                      <span class="badge rounded-pill badge-notification bg-danger">6</span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                      <li>
+                          <a class="dropdown-item" href="#">Some news</a>
+                      </li>
+                      <li>
+                          <a class="dropdown-item" href="#">Another news</a>
+                      </li>
+                      <li>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                      </li>
+                  </ul>
+              </li>
+              <li class="nav-item dropdown me-3 me-lg-1">
+                  <a class="nav-link dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
+                      role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-bell fa-lg"></i>
+                      <span class="badge rounded-pill badge-notification bg-danger">12</span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                      <li>
+                          <a class="dropdown-item" href="#">Some news</a>
+                      </li>
+                      <li>
+                          <a class="dropdown-item" href="#">Another news</a>
+                      </li>
+                      <li>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                      </li>
+                  </ul>
+              </li>
+              <li class="nav-item dropdown me-3 me-lg-1">
+                  <a class="nav-link dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
+                      role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-chevron-circle-down fa-lg"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                      <li>
+                          <a class="dropdown-item" href="#">Some news</a>
+                      </li>
+                      <li>
+                          <a class="dropdown-item" href="#">Another news</a>
+                      </li>
+                      <li>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                      </li>
+                  </ul>
+              </li>
+          </ul>
+          <!-- Right elements -->
+      </div>
+      <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+  <router-outlet></router-outlet>
+</div>

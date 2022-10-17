@@ -1,0 +1,39 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.form-outline .form-control {
+    min-height: auto;
+    padding: .33em .75em;
+    border: 1px;
+    background: transparent;
+    transition: all .2s linear;
+    border: 1px solid;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+.linked_btn{
+    background-color: #0a66c2;
+}
+.forget-text{
+    color: #6c5ce7;
+}
+.form-size{
+    margin-top: 106px;
+}
+.container{
+    padding: 44px;
+}
+.card-form{
+    border-radius: 10px;
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+
+}

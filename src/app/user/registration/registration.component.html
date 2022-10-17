@@ -1,0 +1,146 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card shadow-lg card-form ">
+                    <div class="card-header ">
+                        <h2>Registration Form</h2>
+                    </div>
+                    <form [formGroup]="regForm" (ngSubmit)="registerSubmit(regForm.value)">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputname">First Name <span class="start">*</span></label>
+                                <input type="text" class="form-control" formControlName="firstName">
+                                <div class="form-text text-danger"
+                                    *ngIf="firstName.errors?.['required'] && firstName.touched">First Name is Required
+                                </div>
+                                <div class="form-text text-danger"
+                                    *ngIf="firstName.errors?.['minlength'] && firstName.touched">First Name is to short
+                                </div>
+                                <div class="form-text text-danger"
+                                    *ngIf="firstName.errors?.['pattern'] && firstName.touched">First Name is start width
+                                    Alphabet</div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Last Name <span class="start">*</span></label>
+                                <input type="text" class="form-control" formControlName="lastName">
+                                <div class="form-text text-danger"
+                                    *ngIf="lastName.errors?.['required'] && lastName.touched">Last Name is Required
+                                </div>
+                                <div class="form-text text-danger"
+                                    *ngIf="lastName.errors?.['minlength'] && lastName.touched">Last Name is to short
+                                </div>
+                                <div class="form-text text-danger"
+                                    *ngIf="lastName.errors?.['pattern'] && lastName.touched">Last Name is start width
+                                    Alphabet</div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail4">Email <span class="start">*</span></label>
+                                <input type="email" class="form-control" id="inputEmail4" formControlName="email">
+                                <div class="form-text text-danger" *ngIf="email.errors?.['email'] && email.touched">Last
+                                    Name is Required</div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword4">Password <span class="start">*</span></label>
+                                <input type="password" class="form-control" id="inputPassword4" placeholder="Password"
+                                    formControlName="password">
+                                <div class="form-text text-danger"
+                                    *ngIf="password.errors?.['required'] && password.touched">Password is Required</div>
+                                <div class="form-text text-danger"
+                                    *ngIf="password.errors?.['minlength'] ||password.errors?.['maxlength'] && password.touched">
+                                    Password should be at least 6 and at the max 15 charter long</div>
+                            </div>
+
+                            <div class="form-group col-md-6 ">
+                                <label>Contact <span class="start">*</span></label>
+                                <input type="text" class="form-control" placeholder="123-456-789"
+                                    formControlName="phone" maxlength="10">
+                                <div class="form-text text-danger" *ngIf="phone.errors?.['required'] && phone.touched">
+                                    Contact number is Required</div>
+                                <div class="form-text text-danger" *ngIf="phone.errors?.['pattern'] && phone.touched">
+                                    Contact number is Required</div>
+                                <div class="form-text text-danger" *ngIf="phone.errors?.['minlength'] && phone.touched">
+                                    Contact number is to short</div>
+                                <div class="form-text text-danger" *ngIf="phone.errors?.['maxlength'] && phone.touched">
+                                    Contact number is long</div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Company <span class="start">*</span></label>
+                                <select id="inputState" class="form-control" formControlName="companyId">
+                                    <option selected>----select company----</option>
+                                    <option *ngFor="let getuser of getusers.data;let i=index;" value={{getuser.id}}>
+                                        {{getuser.company}}</option>
+                                    <div class="form-text text-danger"
+                                        *ngIf="companyId.errors?.['required'] && companyId.touched">company number is
+                                        Required</div>
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputCity">Country <span class="start">*</span></label>
+                                <select id="inputState" class="form-control" formControlName="country">
+                                    <option selected>----select country----</option>
+                                    <option>India</option>
+                                    <option>USA</option>
+                                    <option>SHRIlANKA</option>
+                                </select>
+                                <div class="form-text text-danger"
+                                    *ngIf="country.errors?.['required'] && country.touched">country number is Required
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputAddress2">Role <span class="start">*</span></label>
+                                <select class="form-control" formControlName="roleId">
+                                    <!-- <option *ngFor="let user of users.data;let i=index;" value="{{user.id(2)}}">
+                                    {{user.manager}}</option> -->
+                                    <option>------Role Select------</option>
+                                    <option value=2>admin</option>
+                                    <option value=3>manager</option>
+                                </select>
+                                <div class="form-text text-danger"
+                                    *ngIf="roleId.errors?.['required'] && roleId.touched">role number is Required</div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputCity">Plans <span class="start">*</span></label>
+                                <select id="inputState" class="form-control" formControlName="plans">
+                                    <option selected>----select plans----</option>
+                                    <option *ngFor="let user of users.data;let i=index;" value={{user.Id}}>
+                                        {{user.Currentplans}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputState">Status <span class="start">*</span></label>
+                                <select id="inputState" class="form-control" formControlName="statusId">
+                                    <option selected>----select status----</option>
+                                    <option *ngFor="let userstat of userstats.data;let i=index;"
+                                        value={{userstat.StatusId}}>
+                                        {{userstat.StatusName}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="exampleFormControlTextarea1"> Address <span class="start">*</span></label>
+                                <textarea class="form-control" formControlName="addressId" rows="3"></textarea>
+                            </div>
+                            <div class="form-check  mb-3">
+                                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+                                <label class="form-check-label" for="form2Example3">
+                                    I agree all statements in <a href="#!">Terms of service</a>
+                                </label>
+                            </div>
+                        </div>
+                        <button class="btn btn-color" type="submit" (click)="showtoaster()"
+                            role="button">Ragister</button>&nbsp;
+                        <button class="btn btn-warning text-white" role="button" routerLink="/">Cancel</button>
+                        <button class="btn btn-warning text-white float-right" routerLink="/login"
+                            role="button">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

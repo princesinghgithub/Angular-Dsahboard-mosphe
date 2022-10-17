@@ -1,0 +1,21 @@
+
+.start{
+    color: red;
+}
+form{
+    margin: 25px;
+}
+.card-form{
+    border-radius: 10px;
+}
+.container{
+    padding: 44px;
+}
+.card-header{
+    background-color: #6c5ce7;
+    color: white;
+}
+.btn-color{
+    background-color: #6c5ce7;
+    color: white;
+}

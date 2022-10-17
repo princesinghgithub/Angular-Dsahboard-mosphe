@@ -1,0 +1,519 @@
+<section class="mt-3">
+  <div class="container">
+    <!-- Navbar-->
+    <!--Main Navigation-->
+    <header>
+      <!-- Heading -->
+      <!-- <div class="p-4 bg-light mb-2"> -->
+      <!-- <span>
+                    <h5 class="">Time Sheets</h5>
+                </span> -->
+      <!-- Breadcrumb -->
+      <!-- <nav class="d-flex justify-content-between">
+                    <h4 class="mb-0">
+                        <a href="" class="text-reset active text-primary">Home</a>
+                        <span>></span>
+                        <a href="" class="text-reset">TimeSheet</a>
+                    </h4>
+                    <h4 class="add-btn"><a class="btn " href="#" role="button"><i class="fa-solid fa-plus"></i></a></h4>
+                </nav> -->
+      <!-- Breadcrumb -->
+      <!-- </div> -->
+      <!-- Heading -->
+    </header>
+    <!--Main Navigation-->
+    <!-- Navbar -->
+
+    <div class="navpils">
+      <!-- Tabs navs -->
+      <ul class="nav nav-pills mb-2" id="ex-with-icons" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link active" id="ex-with-icons-tab-1" data-mdb-toggle="tab" href="#ex-with-icons-tabs-1"
+            role="tab" aria-controls="ex-with-icons-tabs-1" aria-selected="true"><i
+              class="fa-solid fa-user me-2"></i>Time Sheets</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="ex-with-icons-tab-2" data-mdb-toggle="tab" href="#ex-with-icons-tabs-2" role="tab"
+            aria-controls="ex-with-icons-tabs-2" aria-selected="false"><i class="fa-solid fa-lock me-2"></i>
+            Companies</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="ex-with-icons-tab-3" data-mdb-toggle="tab" href="#ex-with-icons-tabs-3" role="tab"
+            aria-controls="ex-with-icons-tabs-3" aria-selected="false"><i class="fas fa-cogs fa-fw me-2"></i>Task</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="ex-with-icons-tab-2" data-mdb-toggle="tab" href="#ex-with-icons-tabs-2" role="tab"
+            aria-controls="ex-with-icons-tabs-2" aria-selected="false"><i
+              class="fas fa-chart-line fa-fw me-2"></i>Services</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="ex-with-icons-tab-3" data-mdb-toggle="tab" href="#ex-with-icons-tabs-3" role="tab"
+            aria-controls="ex-with-icons-tabs-3" aria-selected="false"><i class="fas fa-cogs fa-fw me-2"></i>Reports</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="ex-with-icons-tab-2" data-mdb-toggle="tab" href="#ex-with-icons-tabs-2" role="tab"
+            aria-controls="ex-with-icons-tabs-2" aria-selected="false"><i
+              class="fas fa-chart-line fa-fw me-2"></i>Connections</a>
+        </li>
+      </ul>
+      <!-- Tabs navs -->
+
+      <!-- Tabs content -->
+      <div class="card p-2">
+        <div class="tab-content" id="ex-with-icons-content">
+          <div class="tab-pane fade show active" id="ex-with-icons-tabs-1" role="tabpanel"
+            aria-labelledby="ex-with-icons-tab-1">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="pagination">
+                  <a href="#">❮</a>
+                  <a href="#">❯</a>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="admin  w-50 ">
+                  <h3> Admin Admin</h3>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="pagination">
+                  <a href="#"><i class="fa-solid fa-print"></i></a>
+                  <a href="#">Day</a>
+                  <a href="#">Week </a>
+                  <a href="#" class="dropdown-toggle" id="dropdownMenuButton" data-mdb-toggle="dropdown"
+                    aria-expanded="false">Teammates</a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                  <a href="#" class="active">+</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- add company -->
+          <div class="tab-pane fade" id="ex-with-icons-tabs-2" role="tabpanel" aria-labelledby="ex-with-icons-tab-2">
+            <div class="container">
+              <div class="inner-contan">
+                <form class="form-inline">
+                  <div class="form-group mx-sm-3 mb-2">
+                    <label for="inputPassword2">Search:</label>
+                    <input type="text" class="form-control" placeholder="Search">
+                  </div>
+                  <button type="button" class="btn btn-outline"> <i
+                      class="fa-solid fa-arrow-up-from-bracket"></i>Export</button>
+                  <button type="button" class="btn  btn-styl-icon"><i class="fa-solid fa-print"></i></button>
+                  <button type="button" class="btn  btn-style  btn-demo" data-toggle="modal" data-target="#myModal2">Add
+                    New Company</button>
+                  <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header bg-light">
+                          New Company
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                              aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body model-body-size">
+                          <div class="container">
+                            <div class="iner-from">
+                              <form [formGroup]="addCompany" (ngSubmit)="submitCompany(addCompany.value)">
+                                <!-- Email input -->
+                                <label class="form-label2" for="form2Example1" formControlName="firstName">First Name
+                                  <span class="start">*</span></label>
+                                <div class="form-outline mb-2">
+                                  <input type="email" id="form2Example1" class="form-control form-input"
+                                    formControlName="firstName" />
+                                  <label class="form-label" for="form2Example1">First Name</label>
+                                </div>
+                                <label class="form-label2" for="form2Example1">Last Name <span
+                                    class="start">*</span></label>
+                                <div class="form-outline mb-2">
+                                  <input type="text" id="form2Example1" class="form-control form-input"
+                                    formControlName="lastName" />
+                                  <label class="form-label" for="form2Example1">Last Name</label>
+                                </div>
+                                <label class="form-label2" for="form2Example1">Email <span
+                                    class="start">*</span></label>
+                                <div class="form-outline mb-2">
+                                  <input type="email" id="form2Example1" class="form-control form-input"
+                                    formControlName="email" />
+                                  <label class="form-label" for="form2Example1">Email </label>
+                                </div>
+                                <label class="form-label2" for="form2Example1">Contact <span
+                                    class="start">*</span></label>
+                                <div class="form-outline mb-2">
+                                  <input type="number" id="form2Example1" class="form-control form-input"
+                                    formControlName="contact" maxlength="10" />
+                                  <label class="form-label" for="form2Example1">Contact</label>
+                                </div>
+                                <label class="form-label2" for="form2Example1">Company <span
+                                    class="start">*</span></label>
+                                <div class="form-outline mb-2">
+                                  <input type="text" id="form2Example1" class="form-control form-input"
+                                    formControlName="company" />
+                                  <label class="form-label" for="form2Example1">Company</label>
+                                </div>
+                                <label class="form-label2" for="form2Example1">Website URL <span
+                                    class="start">*</span></label>
+                                <div class="form-outline mb-2">
+                                  <input type="url" id="form2Example1" class="form-control form-input"
+                                    formControlName="website_url" />
+                                  <label class="form-label" for="form2Example1">Company pvt ltd</label>
+                                </div>
+                                <label class="form-label2" for="form2Example1">Address<span
+                                    class="start">*</span></label>
+                                <div class="form-outline mb-2">
+                                  <input type="text" id="" class="form-control form-input" placeholder="address"
+                                    formControlName="addresss" />
+                                  <!-- <label  class="form-label"  > address</label> -->
+                                </div>
+                                <label class="form-label2" for="form2Example1">Select Plan <span
+                                    class="start">*</span></label>
+                                <div class="form-outline mb-2 ">
+                                  <!-- <label for="exampleFormControlSelect1">Example select</label> -->
+                                  <select class="browser-default custom-select" class="form-control form-input"
+                                    formControlName="plans">
+                                    <option selected>------select-------------------------</option>
+                                    <option *ngFor="let company of Companies;let i=index;" value={{company.planid}}>
+                                      {{company.currentPlan}}</option>
+                                  </select>
+                                </div>
+                                <label class="form-label2" for="form2Example1">Status <span
+                                    class="start">*</span></label>
+                                <div class="form-outline mb-4 ">
+                                  <!-- <label for="exampleFormControlSelect1">Example select</label> -->
+                                  <select class="browser-default custom-select" class="form-control form-input"
+                                    formControlName="status">
+                                    <option selected>------select-------------------------</option>
+                                    <option *ngFor="let company of Companies;let i=index;" value={{company.statusid}}>
+                                      {{company.status}}</option>
+                                    <!-- <option value="2">Two</option>
+                                                                <option value="3">Three</option> -->
+                                  </select>
+                                </div>
+                                <!-- Submit button -->
+                                <button type="submit" class="btn btn-primary  mb-2">Submit</button>&nbsp;
+                                <button type="reset" class="btn btn-outline-secondary  mb-2">Cancel</button>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <table class="table table-borderless mt-3">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">COMPANY NAME</th>
+                    <th scope="col">PRIMARY CONTACT</th>
+                    <th scope="col">PHONES</th>
+                    <th scope="col">ADDRESS</th>
+                    <th scope="col">PLANS</th>
+                    <th scope="col">STATUS</th>
+                    <th scope="col">ACTIONS </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let company of Companies">
+                    <td>{{company.company}}</td>
+                    <td>{{company.contact}}</td>
+                    <td>{{company.contact}}</td>
+                    <td>{{company.address}}</td>
+                    <td>{{company.currentPlan}}</td>
+                    <td>{{company.status}}</td>
+                    <td>
+                      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalLong"
+                        (click)="editCompany(company)"><i class="fas fa-edit"></i></button>&nbsp;
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header ">
+                              <h5 class="modal-title" id="exampleModalLongTitle">Edit Company</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body model-body-size">
+                              <div class="container">
+                                <div class="iner-from">
+                                  <form [formGroup]="addCompany" (ngSubmit)="submitCompany(addCompany.value)">
+                                    <!-- Email input -->
+                                    <label class="form-label" for="form2Example1" formControlName="firstName">First Name
+                                      <span class="start">*</span></label>
+                                    <div class="form-outline mb-2">
+                                      <input type="email" id="form2Example1" class="form-control form-input"
+                                        formControlName="firstName" />
+                                      <!-- <label class="form-label" for="form2Example1">First Name</label> -->
+                                    </div>
+                                    <label class="form-label" for="form2Example1">Last Name <span
+                                        class="start">*</span></label>
+                                    <div class="form-outline mb-2">
+                                      <input type="text" id="form2Example1" class="form-control form-input"
+                                        formControlName="lastName" />
+                                      <!-- <label class="form-label" for="form2Example1">Last Name</label> -->
+                                    </div>
+                                    <label class="form-label" for="form2Example1">Email <span
+                                        class="start">*</span></label>
+                                    <div class="form-outline mb-2">
+                                      <input type="email" id="form2Example1" class="form-control form-input"
+                                        formControlName="email" />
+                                      <!-- <label class="form-label" for="form2Example1">Email </label> -->
+                                    </div>
+                                    <label class="form-label" for="form2Example1">Contact <span
+                                        class="start">*</span></label>
+                                    <div class="form-outline mb-2">
+                                      <input type="number" id="form2Example1" class="form-control form-input"
+                                        formControlName="contact" maxlength="10" />
+                                      <!-- <label class="form-label" for="form2Example1">Contact</label> -->
+                                    </div>
+                                    <label class="form-label" for="form2Example1">Company <span
+                                        class="start">*</span></label>
+                                    <div class="form-outline mb-2">
+                                      <input type="text" id="form2Example1" class="form-control form-input"
+                                        formControlName="company" />
+                                      <!-- <label class="form-label" for="form2Example1">Company</label> -->
+                                    </div>
+                                    <label class="form-label" for="form2Example1">Website URL <span
+                                        class="start">*</span></label>
+                                    <div class="form-outline mb-2">
+                                      <input type="url" id="form2Example1" class="form-control form-input"
+                                        formControlName="website_url" />
+                                      <!-- <label class="form-label" for="form2Example1">Company pvt ltd</label> -->
+                                    </div>
+                                    <label class="form-label" for="form2Example1">Address<span
+                                        class="start">*</span></label>
+                                    <div class="form-outline mb-2">
+                                      <input type="text" id="" class="form-control form-input" placeholder="address"
+                                        formControlName="addresss" />
+                                      <!-- <label  class="form-label"  > address</label> -->
+                                    </div>
+                                    <label class="form-label" for="form2Example1">Select Plan <span
+                                        class="start">*</span></label>
+                                    <div class="form-outline mb- ">
+                                      <!-- <label for="exampleFormControlSelect1">Example select</label> -->
+                                      <select class="browser-default custom-select" class="form-control form-input"
+                                        formControlName="plans">
+                                        <option selected>------select-------------------------</option>
+                                        <option *ngFor="let company of Companies;let i=index;" value={{company.planid}}>
+                                          {{company.currentPlan}}</option>
+                                      </select>
+                                    </div>
+                                    <label class="form-label" for="form2Example1">Status <span
+                                        class="start">*</span></label>
+                                    <div class="form-outline mb-1 ">
+                                      <!-- <label for="exampleFormControlSelect1">Example select</label> -->
+                                      <select class="browser-default custom-select" class="form-control form-input"
+                                        formControlName="status">
+                                        <option selected>------select-------------------------</option>
+                                        <option *ngFor="let company of Companies;let i=index;"
+                                          value={{company.statusid}}>
+                                          {{company.status}}</option>
+                                        <!-- <option value="2">Two</option>
+                                                                    <option value="3">Three</option> -->
+                                      </select>
+                                    </div>
+                                    <!-- Submit button -->
+                                    <button type="submit" class="btn btn-primary  mb-2">Submit</button>&nbsp;
+                                    <button type="reset" class="btn btn-outline-secondary  mb-2">Cancel</button>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <button type="button" class="btn btn-danger" (click)="deleteCompany(company.id)"><i
+                          class="far fa-trash-alt"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- add task -->
+          <div class="tab-pane fade" id="ex-with-icons-tabs-3" role="tabpanel" aria-labelledby="ex-with-icons-tab-3">
+            <!--  -->
+            <div class="container">
+              <div class="inner-contan">
+                <form class="form-inline">
+                  <div class="form-group mx-sm-3 mb-2">
+                    <label for="inputPassword2">Search:</label>
+                    <input type="text" class="form-control" placeholder="Search">
+                  </div>
+                  <button type="button" class="btn btn-outline"> <i
+                      class="fa-solid fa-arrow-up-from-bracket"></i>Export</button>
+                  <button type="button" class="btn  btn-styl-icon"><i class="fa-solid fa-print"></i></button>
+                  <button type="button" class="btn  btn-style  btn-demo" data-toggle="modal" data-target="#myModal3">Add
+                    New Task</button>
+                  <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header bg-light">
+                          New Company
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                              aria-hidden="true">&times;</span></button>
+                        </div>
+                        <div class="modal-body model-body-size">
+                          <div class="container">
+                            <div class="iner-from">
+                              <form [formGroup]="addTask" (ngSubmit)="submitTask(addTask.value)">
+                                <!-- Email input -->
+                                <label class="form-label2" for="form2Example1" formControlName="taskname">Task Name
+                                  <span class="start">*</span></label>
+                                <div class="form-outline mb-2">
+                                  <input type="text" id="form2Example1" class="form-control form-input"
+                                    formControlName="taskname" />
+                                  <!-- <label class="form-label" for="form2Example1">First Name</label> -->
+                                </div>
+                                <label class="form-label2" for="form2Example1">Task Rate <span
+                                    class="start">*</span></label>
+                                <div class="form-outline mb-2">
+                                  <input type="text" id="form2Example1" class="form-control form-input"
+                                    formControlName="taskrate" />
+                                  <!-- <label class="form-label" for="form2Example1">Last Name</label> -->
+                                </div>
+                                <label class="form-label2" for="form2Example1">Billable <span
+                                    class="start">*</span></label>
+                                <div class="form-outline mb-2">
+                                  <select class="browser-default custom-select" class="form-control form-input">
+                                    <option selected>------select-------------------------</option>
+                                    <option> Yes</option>
+
+                                  </select>
+                                  <!-- <label class="form-label" for="form2Example1">Email </label> -->
+                                </div>
+
+                                <label class="form-label2" for="form2Example1">Status <span
+                                    class="start">*</span></label>
+                                <div class="form-outline mb-4 ">
+                                  <!-- <label for="exampleFormControlSelect1">Example select</label> -->
+                                  <select class="browser-default custom-select" class="form-control form-input"
+                                    formControlName="status">
+                                    <option selected>------select-------------------------</option>
+                                    <option *ngFor="let task of tasks;let i=index;" value={{task.id}}>
+                                      {{task.status}}</option>
+                                    <!-- <option value="2">Two</option>
+                                                                <option value="3">Three</option> -->
+                                  </select>
+                                </div>
+                                <!-- Submit button -->
+                                <button type="submit" class="btn btn-primary  mb-2">Submit</button>&nbsp;
+                                <button type="reset" class="btn btn-outline-secondary  mb-2">Cancel</button>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <table class="table table-borderless mt-3">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">TIMESHEETS TASK</th>
+                    <th scope="col">DEFAULT RATE</th>
+                    <th scope="col">STATUS</th>
+                    <th scope="col">ACTIONS </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let task of tasks; i of index">
+                    <td>{{task.taskname}}</td>
+                    <td>{{task.taskrate}}</td>
+                    <td>{{task.status}}</td>
+                    <td>
+                      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalLong"
+                        (click)="editCompany(task)"><i class="fas fa-edit"></i></button>&nbsp;
+                      <!-- Modal -->
+
+                      <button type="button" class="btn btn-danger" (click)="deleteCompany(task.id)"><i
+                          class="far fa-trash-alt"></i></button>
+                    </td>
+
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+              aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header ">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Edit Company</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body model-body-size">
+                    <div class="container">
+                      <div class="container">
+                        <div class="iner-from">
+                          <form [formGroup]="addCompany" (ngSubmit)="submitCompany(addCompany.value)">
+                            <!-- Email input -->
+                            <label class="form-label" for="form2Example1" formControlName="firstName">Task Name
+                              <span class="start">*</span></label>
+                            <div class="form-outline mb-2">
+                              <input type="email" id="form2Example1" class="form-control form-input"
+                                formControlName="firstName" />
+                              <!-- <label class="form-label" for="form2Example1">First Name</label> -->
+                            </div>
+                            <label class="form-label" for="form2Example1">Task Rate <span class="start">*</span></label>
+                            <div class="form-outline mb-2">
+                              <input type="text" id="form2Example1" class="form-control form-input"
+                                formControlName="lastName" />
+                              <!-- <label class="form-label" for="form2Example1">Last Name</label> -->
+                            </div>
+                            <label class="form-label" for="form2Example1">Billable <span class="start">*</span></label>
+                            <div class="form-outline mb-2">
+                              <select class="browser-default custom-select" class="form-control form-input"
+                                formControlName="status">
+                                <option selected>------select-------------------------</option>
+                                <option> Yes</option>
+                                <!-- <option value="2">Two</option>
+                                                        <option value="3">Three</option> -->
+                              </select>
+                              <!-- <label class="form-label" for="form2Example1">Email </label> -->
+                            </div>
+
+                            <label class="form-label" for="form2Example1">Status <span class="start">*</span></label>
+                            <div class="form-outline mb-4 ">
+                              <!-- <label for="exampleFormControlSelect1">Example select</label> -->
+                              <select class="browser-default custom-select" class="form-control form-input"
+                                formControlName="status">
+                                <option selected>------select-------------------------</option>
+                                <option *ngFor="let task of tasks;let i=index;" value={{task.id}}>
+                                  {{task.status}}</option>
+                                <!-- <option value="2">Two</option>
+                                                          <option value="3">Three</option> -->
+                              </select>
+                            </div>
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-primary  mb-2">Submit</button>&nbsp;
+                            <button type="reset" class="btn btn-outline-secondary  mb-2">Cancel</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Tabs content -->
+    </div>
+  </div>
+</section>
